@@ -68,12 +68,26 @@ export default function RootLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
         <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
-        <Drawer>
+        <Drawer
+          screenOptions={{
+            // Add this to hide screens that aren't explicitly defined
+            drawerItemStyle: { display: "none", backgroundColor: "grey" },
+            drawerActiveBackgroundColor: "hsl(var(--accent))",
+            // drawerActiveTintColor: "hsl(var(--accent-foreground))",
+            // Normal state colors
+            // drawerInactiveTintColor: "hsl(var(--foreground))",
+            drawerInactiveBackgroundColor: "transparent",
+            headerShadowVisible: false,
+            drawerActiveTintColor: "red",
+            drawerInactiveTintColor: "",
+          }}
+        >
           <Drawer.Screen
-            name="(drawer)/index"
+            name="(drawer)/rent/index"
             options={{
               drawerLabel: "Home",
-              title: "Home",
+              title: "My Rent",
+              drawerItemStyle: { display: "flex" },
             }}
           />
           <Drawer.Screen
@@ -81,6 +95,7 @@ export default function RootLayout() {
             options={{
               drawerLabel: "Setting",
               title: "Setting",
+              drawerItemStyle: { display: "flex" },
             }}
           />
         </Drawer>
