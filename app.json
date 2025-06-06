@@ -18,6 +18,9 @@
       },
       "edgeToEdgeEnabled": true
     },
+    "expo": {
+      "userInterfaceStyle": "light"
+    },
     "web": {
       "bundler": "metro",
       "output": "static",
