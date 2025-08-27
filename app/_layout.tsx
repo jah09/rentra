@@ -90,12 +90,15 @@ export default function RootLayout() {
               drawerItemStyle: { display: "flex" },
             }}
           />
+
           <Drawer.Screen
-            name="(drawer)/setting"
+            name="(drawer)/rent/[id]"
             options={{
-              drawerLabel: "Setting",
-              title: "Setting",
-              drawerItemStyle: { display: "flex" },
+              headerShown: false,
+              header: () => null,
+              drawerLabel: "Detail",
+              title: "My Rent",
+              drawerItemStyle: { display: "none" },
             }}
           />
         </Drawer>
